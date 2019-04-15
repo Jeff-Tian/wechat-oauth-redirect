@@ -1,7 +1,5 @@
+import Element from "../common/Element";
+
 require("../common/service-worker");
 
-let element = document.createElement("div");
-
-element.innerHTML = "Demo";
-
-document.body.appendChild(element);
+document.body.appendChild(Element.create("demo"));
