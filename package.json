@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Jeff-Tian/wechat-oauth-redirect/issues"
   },
-  "homepage": "https://github.com/Jeff-Tian/wechat-oauth-redirect#readme",
+  "homepage": "https://jeff-tian.github.io/wechat-oauth-redirect/",
   "devDependencies": {
     "@types/lodash": "^4.14.123",
     "clean-webpack-plugin": "^2.0.1",
