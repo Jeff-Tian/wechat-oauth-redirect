@@ -2,6 +2,8 @@
 
 > 一劳永逸的通用微信 OAuth 授权跳转。Universal wechat oauth authorizing redirect, once and for all.
 
+> 人生苦短，少做跳转。一劳永逸，不再搬砖。
+
 [![Build Status](https://travis-ci.org/Jeff-Tian/wechat-oauth-redirect.svg?branch=master)](https://travis-ci.org/Jeff-Tian/wechat-oauth-redirect)
 
 ## 为什么要做这个？
