@@ -13,11 +13,11 @@ const functionalPages = fs.readdirSync("src/function-pages");
 const entries = {};
 
 sitePages.map(f => {
-  entries[path.basename(f, ".ts")] = `./src/site-pages/${f}`;
+  entries[path.basename(f, path.extname(f))] = `./src/site-pages/${f}`;
 });
 
 functionalPages.map(f => {
-  entries[path.basename(f, ".ts")] = `./src/function-pages/${f}`;
+  entries[path.basename(f, path.extname(f))] = `./src/function-pages/${f}`;
 });
 
 module.exports = {
@@ -29,12 +29,33 @@ module.exports = {
   // },
   plugins: [
     new CleanWebpackPlugin(),
-    ...sitePages.concat(functionalPages).map(
+    ...sitePages.map(
       p =>
         new HtmlWebpackPlugin({
-          filename: `${path.basename(p, ".ts")}.html`,
+          filename: `${path.basename(p, path.extname(p))}.html`,
           title: "人生苦短，少做跳转。一劳永逸，不再搬砖。",
-          chunks: [path.basename(p, ".ts")],
+          chunks: [path.basename(p, path.extname(p))],
+          minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true
+          },
+          template: "src/static/index.html"
+        })
+    ),
+    ...functionalPages.map(
+      p =>
+        new HtmlWebpackPlugin({
+          filename: `${path.basename(p, path.extname(p))}.html`,
+          title: "跳转中……",
+          chunks: [path.basename(p, path.extname(p))],
           minify: {
             removeComments: true,
             collapseWhitespace: true,
@@ -71,14 +92,18 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: [".tsx", ".ts", ".js", ".json"]
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/
+        loader: "awesome-typescript-loader"
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       },
       {
         test: /\.css$/,
@@ -93,5 +118,9 @@ module.exports = {
         use: ["file-loader"]
       }
     ]
+  },
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
   }
 };
