@@ -1,7 +1,7 @@
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/service-worker.js")
+      .register(`${process.env.ASSET_PATH}service-worker.js`)
       .then(registration => {
         console.log("SW registered: ", registration);
       })

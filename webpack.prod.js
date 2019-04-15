@@ -6,6 +6,7 @@ const ASSET_PATH = process.env.ASSET_PATH || "/";
 const webpack = require("webpack");
 const fs = require("fs");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const tsImportPluginFactory = require("ts-import-plugin");
 
 const sitePages = fs.readdirSync("src/site-pages");
 const functionalPages = fs.readdirSync("src/function-pages");
@@ -34,7 +35,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           filename: `${path.basename(p, path.extname(p))}.html`,
           title: "人生苦短，少做跳转。一劳永逸，不再搬砖。",
-          chunks: [path.basename(p, path.extname(p))],
+          chunks: [path.basename(p, path.extname(p)), "vendors~index"],
           minify: {
             removeComments: true,
             collapseWhitespace: true,
@@ -79,10 +80,26 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env.ASSET_PATH": JSON.stringify(ASSET_PATH)
     }),
-    new FaviconsWebpackPlugin("./src/static/images/logo.jpg")
+    new FaviconsWebpackPlugin({
+      logo: "./src/static/images/logo.jpg",
+      title: "人生苦短",
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: true,
+        yandex: false,
+        windows: true
+      }
+    }),
+    new webpack.HashedModuleIdsPlugin()
   ],
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: ASSET_PATH
   },
@@ -98,7 +115,19 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        loader: "awesome-typescript-loader",
+        options: {
+          getCustomTransformers: () => ({
+            before: [
+              tsImportPluginFactory({
+                libraryName: "antd",
+                libraryDirectory: "lib",
+                style: true
+              })
+            ]
+          })
+        },
+        exclude: /node_modules/
       },
       {
         enforce: "pre",
@@ -108,6 +137,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          {
+            loader: "less-loader", // compiles Less to CSS
+            options: {
+              javascriptEnabled: true
+            }
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

@@ -29,3 +29,5 @@
 - **开发语言 typescript**: 微软开发的强类型语言，它是 `javascript` 的一个超集。本项目的 webpack 里使用了 `ts-loader` 把它转译成 `javascript`
 - **部署在 `Github pages`**：这是一个静态站点托管提供者。
 - **域名解析在 `js.org` 上**：`js.org` 提供免费二级域名解析。
+- **前端框架 React**: React 是一个组件化的前端框架，大大提高了可重用性，让页面的开发就像搭积木一样。
+- **UI 框架 ant design**: Ant Design 是一个优秀的样式库。
