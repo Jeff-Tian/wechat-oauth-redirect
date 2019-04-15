@@ -20,3 +20,12 @@
 ### 这个域名稳定吗？
 
 这是放在 `Github pages` 服务上的静态站点，域名服务商是 `js.org`。只要 `github` 与 `js.org` 服务正常，这个站点就是可用状态。
+
+## 开发：
+
+### 解构此库：
+
+- **打包工具 webpack**: webpack 是一个代码打包工具，它甚至可以把项目所有的依赖放进一个 `.js` 文件里
+- **开发语言 typescript**: 微软开发的强类型语言，它是 `javascript` 的一个超集。本项目的 webpack 里使用了 `ts-loader` 把它转译成 `javascript`
+- **部署在 `Github pages`**：这是一个静态站点托管提供者。
+- **域名解析在 `js.org` 上**：`js.org` 提供免费二级域名解析。
