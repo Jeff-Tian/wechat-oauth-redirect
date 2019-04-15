@@ -5,6 +5,7 @@ const WorkboxPlugin = require("workbox-webpack-plugin");
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 const webpack = require("webpack");
 const fs = require("fs");
+let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const sitePages = fs.readdirSync("src/site-pages");
 const functionalPages = fs.readdirSync("src/function-pages");
@@ -56,7 +57,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.ASSET_PATH": JSON.stringify(ASSET_PATH)
-    })
+    }),
+    new FaviconsWebpackPlugin("./src/static/images/logo.jpg")
   ],
   output: {
     filename: "[name].bundle.js",
