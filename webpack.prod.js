@@ -22,10 +22,10 @@ functionalPages.map(f => {
 module.exports = {
   mode: "production",
   entry: entries,
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./dist"
-  },
+  devtool: "source-map",
+  // devServer: {
+  //   contentBase: "./dist"
+  // },
   plugins: [
     new CleanWebpackPlugin(),
     ...sitePages.concat(functionalPages).map(
@@ -33,6 +33,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           filename: `${path.basename(p, ".ts")}.html`,
           title: "人生苦短，少做跳转。一劳永逸，不再搬砖。",
+          chunks: [path.basename(p, ".ts")],
           minify: {
             removeComments: true,
             collapseWhitespace: true,
@@ -61,6 +62,11 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: ASSET_PATH
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
