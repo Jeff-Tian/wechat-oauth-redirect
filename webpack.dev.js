@@ -14,11 +14,17 @@ const functionalPages = fs.readdirSync("src/function-pages");
 const entries = {};
 
 sitePages.map(f => {
-  entries[path.basename(f, path.extname(f))] = `./src/site-pages/${f}`;
+  entries[path.basename(f, path.extname(f))] = [
+    `./src/site-pages/${f}`,
+    "webpack-hot-middleware/client"
+  ];
 });
 
 functionalPages.map(f => {
-  entries[path.basename(f, path.extname(f))] = `./src/function-pages/${f}`;
+  entries[path.basename(f, path.extname(f))] = [
+    `./src/function-pages/${f}`,
+    "webpack-hot-middleware/client"
+  ];
 });
 
 module.exports = {
@@ -72,7 +78,12 @@ module.exports = {
         windows: true
       }
     }),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
+    // OccurrenceOrderPlugin is needed for webpack 1.x only
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    // Use NoErrorsPlugin for webpack 1.x
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   output: {
     filename: "[name].[hash].js",

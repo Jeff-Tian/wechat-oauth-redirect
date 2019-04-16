@@ -7,18 +7,25 @@ import * as ReactDOM from "react-dom";
 import { Layout } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Docs } from "../components/Docs";
+import { Nav } from "../components/Nav";
 
 ReactDOM.render(
   <div>
-    <Header>Header</Header>
-    <Content>
-      <BrowserRouter basename={process.env.ASSET_PATH}>
-        <Switch>
-          <Route path="/" component={Hello} />
-        </Switch>
-      </BrowserRouter>
-    </Content>
-    <Footer>Footer</Footer>
+    <BrowserRouter basename={process.env.ASSET_PATH}>
+      <Layout>
+        <Header>
+          <Nav />
+        </Header>
+        <Content>
+          <Switch>
+            <Route exact path="/" component={() => <div>Index</div>} />
+            <Route path="/docs" component={() => <div>Docs</div>} />
+          </Switch>
+        </Content>
+        <Footer>Footer</Footer>
+      </Layout>
+    </BrowserRouter>
   </div>,
   document.getElementById("main")
 );

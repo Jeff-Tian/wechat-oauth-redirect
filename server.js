@@ -1,6 +1,7 @@
 const express = require("express");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
+const path = require("path");
 
 const app = express();
 const config = require("./webpack.dev.js");
@@ -13,6 +14,23 @@ app.use(
     publicPath: config.output.publicPath
   })
 );
+
+app.use(require("webpack-hot-middleware")(compiler));
+
+app.use("*", function(req, res, next) {
+  const filename = path.join(compiler.outputPath, `index.html`);
+
+  compiler.outputFileSystem.readFile(filename, function(err, result) {
+    if (err) {
+      console.error(filename);
+      return next(err);
+    }
+
+    res.set("content-type", "text/html");
+    res.send(result);
+    res.end();
+  });
+});
 
 // Serve the files on port 3000.
 app.listen(3000, function() {
