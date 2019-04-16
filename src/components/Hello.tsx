@@ -5,10 +5,11 @@ export interface HelloProps {
   framework: string;
 }
 
+console.log("hello");
 export const Hello = (props: HelloProps) => (
   <div>
     <h1>
-      Hello from {props.compiler} and {props.framework}!
+      Hello from {props.compiler} and {props.framework}! changed
     </h1>
     <Button type="primary">Button</Button>
   </div>
