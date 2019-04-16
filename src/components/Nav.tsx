@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export interface NavProps {}
 
 export const Nav = (props: NavProps) => (
-  <Menu mode="horizontal" theme="dark">
+  <Menu mode="horizontal" theme="dark" style={{ lineHeight: "64px" }}>
     <Menu.Item key="home">
       <Link to="/">Home</Link>
     </Menu.Item>

@@ -8,13 +8,16 @@ import { Layout } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Docs } from "../components/Docs";
+import "../less/layout.less";
 import { Nav } from "../components/Nav";
-
 ReactDOM.render(
   <div>
     <BrowserRouter basename={process.env.ASSET_PATH}>
       <Layout>
         <Header>
+          <div className="logo">
+            <img src={require("../static/images/logo.jpg")} />
+          </div>
           <Nav />
         </Header>
         <Content>
