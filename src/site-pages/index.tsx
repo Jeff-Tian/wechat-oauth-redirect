@@ -2,9 +2,14 @@ require("../common/service-worker");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "../components/Hello";
+import { Layout } from "antd";
+const { Header, Footer, Sider, Content } = Layout;
 
 ReactDOM.render(
-  <Hello compiler="TypeScript" framework="React Antd!!!" />,
+  <div>
+    <Header>Header</Header>
+    <Content>Content</Content>
+    <Footer>Footer</Footer>
+  </div>,
   document.getElementById("main")
 );
