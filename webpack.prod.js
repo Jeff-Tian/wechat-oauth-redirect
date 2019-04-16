@@ -35,7 +35,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           filename: `${path.basename(p, path.extname(p))}.html`,
           title: "人生苦短，少做跳转。一劳永逸，不再搬砖。",
-          chunks: [path.basename(p, path.extname(p)), "vendors~index"],
+          chunks: [path.basename(p, path.extname(p)), "vendors~index", "index"],
           minify: {
             removeComments: true,
             collapseWhitespace: true,
