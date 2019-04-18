@@ -1,13 +1,12 @@
-import { Hello } from "../components/Hello";
+import ReactMarkdown from "react-markdown";
 
 require("../common/service-worker");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Layout } from "antd";
+import { Col, Layout, Row } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Docs } from "../components/Docs";
 import "../less/layout.less";
 import { Nav } from "../components/Nav";
 ReactDOM.render(
@@ -24,9 +23,56 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={() => <div>Index</div>} />
             <Route path="/docs" component={() => <div>Docs</div>} />
+            <Route
+              path="/demos"
+              component={() => <ReactMarkdown source={"#help"} />}
+            />
           </Switch>
         </Content>
-        <Footer>Footer</Footer>
+        <Footer>
+          <Row gutter={16}>
+            <Col span={6}>
+              <h3>相关资源</h3>
+              <p>
+                <a
+                  href="https://github.com/Jeff-Tian/wechat-oauth-ts"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  微信 OAuth 授权 SDK
+                </a>
+              </p>
+            </Col>
+            <Col span={6}>
+              <h3>社区</h3>
+              <p>敬请期待</p>
+            </Col>
+            <Col span={6}>
+              <h3>帮助</h3>
+              <p>
+                <a
+                  href="https://github.com/Jeff-Tian/wechat-oauth-redirect/issues"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Github
+                </a>
+              </p>
+            </Col>
+            <Col span={6}>
+              <h3>更多产品</h3>
+              <p>
+                <a
+                  href="http://tictactoe.js.org"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  AI 三子棋
+                </a>
+              </p>
+            </Col>
+          </Row>
+        </Footer>
       </Layout>
     </BrowserRouter>
   </div>,

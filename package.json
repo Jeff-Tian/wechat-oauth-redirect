@@ -21,10 +21,13 @@
   },
   "homepage": "https://jeff-tian.github.io/wechat-oauth-redirect/",
   "devDependencies": {
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "@types/lodash": "^4.14.123",
     "@types/node": "^11.13.4",
     "@types/react-router-dom": "^4.3.2",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "express": "^4.16.4",
@@ -33,6 +36,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "markdown-to-react-loader": "^1.0.1",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "ts-import-plugin": "^1.5.5",
@@ -46,12 +50,14 @@
     "workbox-webpack-plugin": "^4.2.0"
   },
   "dependencies": {
+    "@babel/core": "^7.4.3",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "antd": "^3.16.3",
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-markdown": "^4.0.8",
     "react-router-dom": "^5.0.0"
   }
 }

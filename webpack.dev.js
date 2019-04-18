@@ -140,6 +140,19 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ["file-loader"]
+      },
+      {
+        test: /\.md$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/env", "@babel/react"]
+            }
+          },
+          "markdown-to-react-loader"
+        ]
       }
     ]
   },
