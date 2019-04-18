@@ -19,13 +19,13 @@ ReactDOM.render(
           </div>
           <Nav />
         </Header>
-        <Content>
+        <Content style={{ padding: "24px 50px" }}>
           <Switch>
             <Route exact path="/" component={() => <div>Index</div>} />
             <Route path="/docs" component={() => <div>Docs</div>} />
             <Route
               path="/demos"
-              component={() => <ReactMarkdown source={"#help"} />}
+              component={() => <ReactMarkdown source={"# help"} />}
             />
           </Switch>
         </Content>
