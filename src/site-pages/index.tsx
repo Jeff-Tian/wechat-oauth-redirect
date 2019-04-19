@@ -1,5 +1,4 @@
-import ReactMarkdown from "react-markdown";
-
+import Markdown from "markdown-to-jsx";
 require("../common/service-worker");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -9,6 +8,8 @@ const { Header, Footer, Sider, Content } = Layout;
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../less/layout.less";
 import { Nav } from "../components/Nav";
+import demosText from "!!raw-loader!./demos.md";
+
 ReactDOM.render(
   <div>
     <BrowserRouter basename={process.env.ASSET_PATH}>
@@ -25,7 +26,7 @@ ReactDOM.render(
             <Route path="/docs" component={() => <div>Docs</div>} />
             <Route
               path="/demos"
-              component={() => <ReactMarkdown source={"# help"} />}
+              component={() => <Markdown>{demosText}</Markdown>}
             />
           </Switch>
         </Content>
