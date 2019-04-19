@@ -6,7 +6,6 @@ const ASSET_PATH = process.env.ASSET_PATH || "/";
 const webpack = require("webpack");
 const fs = require("fs");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const tsImportPluginFactory = require("ts-import-plugin");
 
 const sitePages = fs.readdirSync("src/site-pages");
 const functionalPages = fs.readdirSync("src/function-pages");
@@ -93,7 +92,7 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json", "md"]
   },
-  module: require("webpack/module"),
+  module: require("./webpack/module.js"),
   externals: {
     react: "React",
     "react-dom": "ReactDOM"
