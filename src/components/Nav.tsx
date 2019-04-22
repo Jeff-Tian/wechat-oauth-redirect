@@ -23,6 +23,9 @@ export const Nav = (props: NavProps) => (
     <Menu.Item key="demos">
       <Link to="/demos">Demos</Link>
     </Menu.Item>
+    <Menu.Item key="en">
+      <Link to="/en/">English</Link>
+    </Menu.Item>
     <Menu.Item key="source">
       <a
         href="https://github.com/Jeff-Tian/wechat-oauth-redirect"

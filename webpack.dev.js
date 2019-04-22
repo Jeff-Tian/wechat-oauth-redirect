@@ -1,57 +1,21 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 const webpack = require("webpack");
-const fs = require("fs");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
-const sitePages = fs.readdirSync("src/site-pages");
-const functionalPages = fs.readdirSync("src/function-pages");
-
-const entries = {};
-
-sitePages.map(f => {
-  entries[path.basename(f, path.extname(f))] = [
-    `./src/site-pages/${f}`,
-    "webpack-hot-middleware/client"
-  ];
-});
-
-functionalPages.map(f => {
-  entries[path.basename(f, path.extname(f))] = [
-    `./src/function-pages/${f}`,
-    "webpack-hot-middleware/client"
-  ];
-});
-
+let pages = require("./webpack/pages");
 module.exports = {
   mode: "development",
-  entry: entries,
+  entry: pages.entries,
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist"
   },
   plugins: [
     new CleanWebpackPlugin(),
-    ...sitePages.map(
-      p =>
-        new HtmlWebpackPlugin({
-          filename: `${path.basename(p, path.extname(p))}.html`,
-          title: "人生苦短，少做跳转。一劳永逸，不再搬砖。",
-          chunks: [path.basename(p, path.extname(p)), "vendors~index", "index"],
-          template: "src/static/index.html"
-        })
-    ),
-    ...functionalPages.map(
-      p =>
-        new HtmlWebpackPlugin({
-          filename: `${path.basename(p, path.extname(p))}.html`,
-          title: "跳转中……",
-          chunks: [path.basename(p, path.extname(p))]
-        })
-    ),
+    ...pages.plugins,
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast
       // and not allow any straggling "old" SWs to hang around
