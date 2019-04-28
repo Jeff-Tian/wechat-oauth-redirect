@@ -22,7 +22,7 @@ app.use("*", function(req, res, next) {
 
   compiler.outputFileSystem.readFile(filename, function(err, result) {
     if (err) {
-      console.error(filename);
+      console.error(req.url, filename);
       return next(err);
     }
 

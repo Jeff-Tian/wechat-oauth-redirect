@@ -9,10 +9,12 @@ const sitePagesEn = fs.readdirSync("src/site-pages-en");
 const entries = {};
 
 sitePages.map(f => {
-  entries[path.basename(f, path.extname(f))] = [
-    `./src/site-pages/${f}`,
-    "webpack-hot-middleware/client"
-  ];
+  if (fs.lstatSync(path.join("src/site-pages", f)).isFile()) {
+    entries[path.basename(f, path.extname(f))] = [
+      `./src/site-pages/${f}`,
+      "webpack-hot-middleware/client"
+    ];
+  }
 });
 
 sitePagesEn.map(f => {
