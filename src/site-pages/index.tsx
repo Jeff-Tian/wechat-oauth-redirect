@@ -4,13 +4,14 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Col, Layout, Row } from "antd";
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../less/layout.less";
 import { Nav } from "../components/Nav";
 import demosText from "!!raw-loader!./demos.md";
 import whyText from "!!raw-loader!./why.md";
 
+console.log("rendering...");
 ReactDOM.render(
   <div>
     <p>Index.tsx</p>
@@ -85,3 +86,4 @@ ReactDOM.render(
   </div>,
   document.getElementById("main")
 );
+console.log("rendered");
