@@ -13,6 +13,7 @@ import whyText from "!!raw-loader!./why.md";
 
 ReactDOM.render(
   <div>
+    <p>Index.tsx</p>
     <BrowserRouter basename={process.env.ASSET_PATH}>
       <Layout>
         <Header>
