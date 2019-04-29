@@ -45,11 +45,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     publicPath: ASSET_PATH
   },
-  optimization: {
-    splitChunks: {
-      chunks: "all"
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "all"
+  //   }
+  // },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"]
   },

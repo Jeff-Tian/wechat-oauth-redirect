@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "一劳永逸的通用微信 OAuth 授权跳转。Universal wechat oauth authorizing redirect, once and for all.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch --config webpack.dev.js",
     "start": "webpack-dev-server --open  --config webpack.dev.js",
