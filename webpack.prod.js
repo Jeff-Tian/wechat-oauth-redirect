@@ -5,6 +5,7 @@ const ASSET_PATH = process.env.ASSET_PATH || "/";
 const webpack = require("webpack");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const pages = require("./webpack/pages");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -37,22 +38,28 @@ module.exports = {
         yandex: false,
         windows: true
       }
-    }),
+    })
   ],
   output: {
     filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: ASSET_PATH
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: "all"
-  //   }
-  // },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"]
   },
   module: require("./webpack/module.js"),
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false
+          }
+        }
+      })
+    ]
+  },
   externals: {
     react: "React",
     "react-dom": "ReactDOM"
