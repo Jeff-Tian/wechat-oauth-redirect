@@ -38,7 +38,6 @@ module.exports = {
         windows: true
       }
     }),
-    new webpack.HashedModuleIdsPlugin()
   ],
   output: {
     filename: "[name].[hash].js",
