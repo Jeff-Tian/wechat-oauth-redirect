@@ -9,12 +9,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../less/layout.less";
 import { Nav } from "../components/Nav";
 import demosText from "!!raw-loader!./demos.md";
+import docsText from "!!raw-loader!./docs.md";
 import whyText from "!!raw-loader!./why.md";
 
-console.log("rendering...");
 ReactDOM.render(
   <div>
-    <p>Index.tsx</p>
     <BrowserRouter basename={process.env.ASSET_PATH}>
       <Layout>
         <Header>
@@ -26,7 +25,10 @@ ReactDOM.render(
         <Content style={{ padding: "24px 50px" }}>
           <Switch>
             <Route exact path="/" component={() => <div>Index</div>} />
-            <Route path="/docs" component={() => <div>Docs</div>} />
+            <Route
+              path="/docs"
+              component={() => <Markdown>{docsText}</Markdown>}
+            />
             <Route
               path="/demos"
               component={() => <Markdown>{demosText}</Markdown>}
@@ -86,4 +88,3 @@ ReactDOM.render(
   </div>,
   document.getElementById("main")
 );
-console.log("rendered");

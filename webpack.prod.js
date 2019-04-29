@@ -6,6 +6,7 @@ const webpack = require("webpack");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const pages = require("./webpack/pages");
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -38,7 +39,8 @@ module.exports = {
         yandex: false,
         windows: true
       }
-    })
+    }),
+    new CopyPlugin([{ from: "site-pages/images", to: "dist" }])
   ],
   output: {
     filename: "[name].[hash].js",

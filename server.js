@@ -17,6 +17,8 @@ app.use(
 
 app.use(require("webpack-hot-middleware")(compiler));
 
+app.use(express.static("src/site-pages"));
+
 app.use("*", function(req, res, next) {
   const filename = path.join(compiler.outputPath, `index.html`);
 
@@ -34,5 +36,5 @@ app.use("*", function(req, res, next) {
 
 // Serve the files on port 3000.
 app.listen(3000, function() {
-  console.log("Example app listening on port 3000!\n");
+  console.log("wechat-oauth-redirect app listening on port 3000!\n");
 });
