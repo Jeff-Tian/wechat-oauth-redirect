@@ -40,7 +40,9 @@ module.exports = {
         windows: true
       }
     }),
-    new CopyPlugin([{ from: "site-pages/images", to: "dist" }])
+    new CopyPlugin([
+      { from: "src/site-pages/images", to: "images", toType: "dir" }
+    ])
   ],
   output: {
     filename: "[name].[hash].js",
