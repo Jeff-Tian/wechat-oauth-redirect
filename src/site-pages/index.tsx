@@ -80,6 +80,33 @@ ReactDOM.render(
                   AI 三子棋
                 </a>
               </p>
+              <p>
+                <a
+                  href="https://npmjs.com/package/grpc-man"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  gRPC man
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://ass-editor.js.org/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  在线视频字幕编辑器
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://short.js.org"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  短链生成器
+                </a>
+              </p>
             </Col>
           </Row>
         </Footer>
