@@ -1,9 +1,11 @@
 import Markdown from "markdown-to-jsx";
+
 require("../common/service-worker");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Col, Layout, Row } from "antd";
+
 const { Header, Footer, Content } = Layout;
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../less/layout.less";
@@ -50,6 +52,15 @@ ReactDOM.render(
                   rel="noreferrer noopener"
                 >
                   微信 OAuth 授权 SDK
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://github.com/Jeff-Tian/egg-passport-wechat"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  egg 微信 passport 插件
                 </a>
               </p>
             </Col>
