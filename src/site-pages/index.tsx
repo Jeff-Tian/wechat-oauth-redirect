@@ -84,7 +84,7 @@ ReactDOM.render(
               <h3>更多产品</h3>
               <p>
                 <a
-                  href="http://tictactoe.js.org"
+                  href="http://tictactoe.pa-ca.me"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -102,7 +102,7 @@ ReactDOM.render(
               </p>
               <p>
                 <a
-                  href="https://ass-editor.js.org/"
+                  href="https://ass-editor.pa-ca.me/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -111,7 +111,7 @@ ReactDOM.render(
               </p>
               <p>
                 <a
-                  href="https://short.js.org"
+                  href="https://short.pa-ca.me"
                   target="_blank"
                   rel="noreferrer noopener"
                 >

@@ -69,7 +69,7 @@ ReactDOM.render(
               <h3>更多产品</h3>
               <p>
                 <a
-                  href="http://tictactoe.js.org"
+                  href="http://tictactoe.pa-ca.me"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
