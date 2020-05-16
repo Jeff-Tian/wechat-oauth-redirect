@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Jeff-Tian/wechat-oauth-redirect/issues"
   },
-  "homepage": "https://jeff-tian.github.io/wechat-oauth-redirect/",
+  "homepage": "https://wechat.pa-ca.me",
   "devDependencies": {
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
