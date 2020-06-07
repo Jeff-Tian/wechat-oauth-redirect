@@ -10,6 +10,7 @@ const entries = {};
 
 sitePages.map(f => {
   if (fs.lstatSync(path.join("src/site-pages", f)).isFile()) {
+    console.log('map ', f, path.basename(f, path.extname(f)));
     entries[path.basename(f, path.extname(f))] = [
       `./src/site-pages/${f}`,
       "webpack-hot-middleware/client"
