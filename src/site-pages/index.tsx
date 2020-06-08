@@ -13,7 +13,7 @@ import {Nav} from "../components/Nav"
 import demosText from "!!raw-loader!./demos.md"
 import docsText from "!!raw-loader!./docs.md"
 import whyText from "!!raw-loader!./why.md"
-import mpQRText from "!!raw-loader!./mp-qr.md"
+import {MpQR} from "./mp-qr"
 
 ReactDOM.render(
     <div>
@@ -40,7 +40,7 @@ ReactDOM.render(
                             path="/why"
                             component={() => <Markdown>{whyText}</Markdown>}
                         />
-                        <Route path="/mp-qr" component={() => <Markdown>{mpQRText}</Markdown>}/>
+                        <Route path="/mp-qr" component={MpQR}/>
                     </Switch>
                 </Content>
                 <Footer>
