@@ -27,11 +27,13 @@ export const MpQR = () => {
             }
         })
 
-        const {status, openid} = await res.json()
+        const {status, openId} = await res.json()
 
         const {state} = querystring.parse(window.location.search.substr(1))
 
-        window.location.href = `https://keycloak.jiwai.win/auth/realms/UniHeart/broker/weixin/endpoint?openid=${openid}&state=${state}`
+        if (openId) {
+            window.location.href = `https://keycloak.jiwai.win/auth/realms/UniHeart/broker/weixin/endpoint?openid=${openId}&state=${state}`
+        }
     }
 
     useEffect(() => {
