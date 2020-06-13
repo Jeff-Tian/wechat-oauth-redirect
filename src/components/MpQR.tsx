@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import {Skeleton, Result} from "antd"
+import querystring from 'querystring'
 
 export const MpQR = () => {
     const [qr, setQr] = useState()
@@ -26,7 +27,11 @@ export const MpQR = () => {
             }
         })
 
-        console.log(await res.json())
+        const {status, openid} = await res.json()
+
+        const {state} = querystring.parse(window.location.search.substr(1))
+
+        window.location.href = `https://keycloak.jiwai.win/auth/realms/UniHeart/broker/weixin/endpoint?openid=${openid}&state=${state}`
     }
 
     useEffect(() => {
