@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{276:function(o,n,r){"use strict";r.r(n),n.default='import Markdown from "markdown-to-jsx"\nimport React from "react"\n\nexport const markdownComponent = (markdownFile: string) => () =>\n    <Markdown>{import((`!!raw-loader!./${markdownFile}`))}</Markdown>\n'}}]);
