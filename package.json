@@ -38,7 +38,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "markdown-to-jsx": "^6.9.4",
+    "markdown-to-jsx": "^6.11.4",
     "markdown-to-react-loader": "^1.0.1",
     "raw-loader": "^2.0.0",
     "source-map-loader": "^0.2.4",
