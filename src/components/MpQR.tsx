@@ -8,7 +8,7 @@ export const MpQR = () => {
     const [ticket, setTicket] = useState()
 
     async function fetchQr() {
-        const res = await fetch('https://sso.jiwai.win/wechat/mp-qr-url', {
+        const res = await fetch('https://uni-sso.herokuapp.com/wechat/mp-qr-url', {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -21,7 +21,7 @@ export const MpQR = () => {
     }
 
     async function fetchQrScanStatus() {
-        const res = await fetch(`https://sso.jiwai.win/wechat/mp-qr-scan-status?ticket=${ticket}`, {
+        const res = await fetch(`https://uni-sso.herokuapp.com/wechat/mp-qr-scan-status?ticket=${ticket}`, {
             headers: {
                 'Content-Type': 'application/json'
             }
