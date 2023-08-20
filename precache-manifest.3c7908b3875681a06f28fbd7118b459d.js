@@ -1,47 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "url": "/0.a2cdfd3b3001beb42e72.js"
+    "url": "/0.e358b0147541b0a3ba71.js"
   },
   {
-    "url": "/1.a2cdfd3b3001beb42e72.js"
+    "url": "/1.e358b0147541b0a3ba71.js"
   },
   {
-    "url": "/2.a2cdfd3b3001beb42e72.js"
+    "url": "/2.e358b0147541b0a3ba71.js"
   },
   {
     "url": "/9a77316e841d24b7a942a8d7fda283fc.jpg"
   },
   {
-    "url": "/demos.a2cdfd3b3001beb42e72.js"
+    "url": "/demos.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "8ca230adbb14abf7a445dc6f23ea2035",
+    "revision": "2b38b0df4011ae06b136bf5831de3cef",
     "url": "/demos.html"
   },
   {
-    "url": "/docs.a2cdfd3b3001beb42e72.js"
+    "url": "/docs.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "d1c475034c9491673b2fac951100b542",
+    "revision": "27929ecf73c08973642208e73d594562",
     "url": "/docs.html"
   },
   {
-    "url": "/en/demos.a2cdfd3b3001beb42e72.js"
+    "url": "/en/demos.e358b0147541b0a3ba71.js"
   },
   {
-    "url": "/en/index.a2cdfd3b3001beb42e72.js"
+    "url": "/en/index.e358b0147541b0a3ba71.js"
   },
   {
-    "url": "/en/mp-qr.a2cdfd3b3001beb42e72.js"
+    "url": "/en/mp-qr.e358b0147541b0a3ba71.js"
   },
   {
-    "url": "/en/why.a2cdfd3b3001beb42e72.js"
+    "url": "/en/why.e358b0147541b0a3ba71.js"
   },
   {
-    "url": "/getting-started.a2cdfd3b3001beb42e72.js"
+    "url": "/getting-started.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "89e70fe81120f3c17469dc4d235ac96d",
+    "revision": "7a7b70db7659b1148ed5c761a2f74aaa",
     "url": "/getting-started.html"
   },
   {
@@ -183,46 +183,46 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/icons-9a77316e841d24b7a942a8d7fda283fc/mstile-70x70.png"
   },
   {
-    "revision": "77e60f65aecffcb50f1fcc4f66b168ac",
-    "url": "/iconstats-86e433aa79dc7c6aba99.json"
+    "revision": "73d8566b1028540a48f3b20369e10bc6",
+    "url": "/iconstats-34a3b07441aa5a65dfb4.json"
   },
   {
-    "revision": "55fc65e6193d15a230c06b27ee13a214",
+    "revision": "b98775a4335d289a040183061dbc0d97",
     "url": "/images.html"
   },
   {
-    "url": "/index.a2cdfd3b3001beb42e72.js"
+    "url": "/index.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "55fc65e6193d15a230c06b27ee13a214",
+    "revision": "b98775a4335d289a040183061dbc0d97",
     "url": "/index.html"
   },
   {
-    "url": "/mp-qr.a2cdfd3b3001beb42e72.js"
+    "url": "/mp-qr.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "43bf83f8607f53b7df101cdb712721e6",
+    "revision": "73fcc65288fdf0c6a45fcef1c88b1ace",
     "url": "/mp-qr.html"
   },
   {
-    "url": "/r.a2cdfd3b3001beb42e72.js"
+    "url": "/r.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "6d08677d53be56b842557ca11c850e6e",
+    "revision": "c33de380964cea3f831b7b0a64f6e79b",
     "url": "/r.html"
   },
   {
-    "url": "/support.a2cdfd3b3001beb42e72.js"
+    "url": "/support.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "7275a5df4aa1aca5907126a43383bb34",
+    "revision": "68b6d9b84cfd373eb64b5f7b4b832255",
     "url": "/support.html"
   },
   {
-    "url": "/why.a2cdfd3b3001beb42e72.js"
+    "url": "/why.e358b0147541b0a3ba71.js"
   },
   {
-    "revision": "5d408077991565956d07c0beb1e581ae",
+    "revision": "67732b1c725698d313b98ce3478748c3",
     "url": "/why.html"
   }
 ]);
