@@ -32,7 +32,7 @@ export const MpQR = () => {
         const {state} = querystring.parse(window.location.search.substr(1))
 
         if (openId) {
-            window.location.href = `https://keycloak.jiwai.win/auth/realms/UniHeart/broker/weixin/endpoint?openid=${openId}&state=${state}`
+            window.location.href = `https://keycloak.jiwai.win/realms/UniHeart/broker/weixin/endpoint?openid=${openId}&state=${state}`
         }
     }
 
