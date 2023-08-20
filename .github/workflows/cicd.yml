@@ -20,6 +20,7 @@ jobs:
         run: npm i -g yarn && yarn && yarn build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          NODE_OPTIONS: "--no-experimental-fetch --openssl-legacy-provider"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
