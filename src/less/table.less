@@ -1,0 +1,30 @@
+// LESS 语言
+table {
+  width: 100%; // 表格宽度
+  border-collapse: collapse; // 边框合并
+  th, td {
+    border: 1px solid #888; // 单元格边框
+    padding: 10px; // 单元格内边距
+    text-align: left; // 文本左对齐
+  }
+  thead {
+    // 表头样式
+    background-color: #555; // 背景颜色
+    color: white; // 文字颜色
+    tr {
+      height: 50px; // 行高
+    }
+  }
+  tbody {
+    // 表体样式
+    tr {
+      height: 40px; // 行高
+      &:nth-child(even) {
+        background-color: #f2f2f2; // 隔行变色
+      }
+      &:hover {
+        background-color: #ddd; // 鼠标悬停高亮
+      }
+    }
+  }
+}

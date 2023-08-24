@@ -9,11 +9,13 @@ import {Col, Layout, Row} from "antd"
 const {Header, Footer, Content} = Layout
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import "../less/layout.less"
+import "../less/table.less"
 import {Nav} from "../components/Nav"
 import demosText from "!!raw-loader!./demos.md"
 import docsText from "!!raw-loader!./docs.md"
 import whyText from "!!raw-loader!./why.md"
 import {MpQR} from "./mp-qr"
+import resourceText from "!!raw-loader!./resources.md"
 
 ReactDOM.render(
     <div>
@@ -41,6 +43,7 @@ ReactDOM.render(
                             component={() => <Markdown>{whyText}</Markdown>}
                         />
                         <Route path="/mp-qr" component={MpQR}/>
+                        <Route path="/resources" component={() => <Markdown>{resourceText}</Markdown>}/>
                     </Switch>
                 </Content>
                 <Footer>
