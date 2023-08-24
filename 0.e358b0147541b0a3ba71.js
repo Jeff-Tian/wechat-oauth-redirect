@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{275:function(e,n,t){"use strict";t.r(n),n.default='export default class Element {\n  static create(text: string) {\n    let element = document.createElement("div");\n\n    element.innerHTML = text;\n\n    return element;\n  }\n}\n'}}]);
